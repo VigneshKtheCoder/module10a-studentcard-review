@@ -1,35 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// App.jsx
+import StudentCard from './Studentcard';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      <StudentCard
+        name="Vignesh K"
+        major="Computer Science/Business"
+        bio="Vignesh is a junior majoring in CS and Business. He loves building apps and SaaS in order to make money, and he eve has a business with his friends!"
+        image="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQAlAMBIgACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAABAUBAgMGB//EADMQAAICAQIEAwcCBgMAAAAAAAABAgMEESESMUFRBRNhFCIyUnGRoUKBM2JykqLBNENT/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/APuIAAGDJzuuhVHim9PTuBuR7symrZy4n2iQcjMst1jF8Mey5kYCZb4hY9VBKK+5HlkXS52z/Z6HMAZ4pPnOX3Grf6mYAG0bJx5Tn9ztDMvg/j4l6kcAWNXiMf8Ati4+qJkLI2R4oSUl6FEbV2TrlxQk0wL3UyQcbOjNqFmkZPk+jJuoGQAAAAAA53Wxqg5yey6dwNMnIjRDV7y6IqbbJW2cU3q+3YW2Stm5y69OxoAAAAAAAAAAAAAACbh5bjpC3ePJS7EIAX6eu/QyV3h+Tv5Nj/pf+iwQGQAAKjOv8y3hi/dj+Sfm2eXRJ9WtEU7e4AAAAAAOlVFlu0Iaru+RKw8Ny0st+HpEsUklokBXQ8Ok/jsS+i1Nn4b2t/xLAAVNmDdBarSa9OZGaaejTT7Mvzjk48L46PZ9GBSg3uqnTNxmt+/c0AAAAno9VzLnDu86pN/EuaKYk4FvBek+UtgLcGPqAK3xOetsYdIrf6kI65U+LJsfZ6HIAAABJwaPOt1l8MdyN6lt4fDgx0+stwJQAAAAAAAI+ZQr6tF8S3RTvZ7noCmzK+DIlHo90BwAAAJ6brmAgLymfmVRmuqMHDw2euNo+j0AFZJ6ybfVtmA+bXZgAAAC5l3jf8ev+lFIXGDPjxo91sBIAAAAAAAAKvxP+P68JaFPnT48mT6LYCOuQAAAADrTc64tLq9QaxjxJgBdHgsnHtJmhIz4cGS38y1I4AAACb4bcozdT/VuvqQgno01zW4HoARMTLVsVGctLF36ksAAAABrZOMIuUpaLuBrfYqq3OXTl9Sjk+Jtvm2SMvJd8tteBcl/sjgAAAAHQCbhU8dTf8wJeFBwxoLq92AOPidetcbOsdmVpfWQU4Si+TWjKOyDqnKD6PcDUAAADpCi6e8ISa+gHNPTkS6c+cPdn7679TT2HI/81/ch7Df8n5QE6GdRJbtr6mfbcf5/wQPYb/k/KHsN/wAn5QEmzxGKT8qDk/UhXX2XPWcv27HT2G/5Pyh7Df8AJ/kgI4O8sS+POp/tucZRlF6Si0+zQGAAAN6YeZbGHdmn0LDwynRO17a7ICcloko8gZAGSF4hj8cPMgvejz9UTQwPPm1cJWyUYLVvoS87F4G7a17vVdjv4dCuNXFF6yfxegG2PhwqSckpT7slIwjIAAAAAAAAA520wtjpOKZ0AFTl4jpfFBNw/KIvXQvpJNNNbMp50qWQ66XxavbsgMY9LusUVy6suYxUUlFaJI0x6I0VqMefV9zqAAAAAAYaT5kG7FnTPzcb94ongCLjZkLPdn7s+qZJ1OGRiV3btcMu6I69qxuS82AFgCJXn1PaesH6okRsjL4ZRf0YG4MGQAMNpc9Ecp5VMOc1+24HY0sthXHinJJESWbZY+HGqbfdmIYcrJceTPVr9KA1ndZmScKE4w6yZLx8eGPDSHN833OkIRjFRikl2RsAAAAAAAAAAAGNBoZAHKyiqz44JkezAqS1jKcfowAIs1KD0jZP7mrlPT+JP7gAdqcaN3x2WfclQwqI78PE/wCZ6gASFFJaJJIyAAAAAAAAAB//2Q=="
+      />
+    </div>
+  );
 }
 
-export default App
+export default App;
